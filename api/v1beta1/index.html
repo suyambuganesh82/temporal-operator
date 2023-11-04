@@ -1,0 +1,5718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alexandrevilain.github.io/temporal-operator/api/v1beta1/">
+      
+      
+        <link rel="prev" href="../../features/overrides/">
+      
+      
+        <link rel="next" href="../../contributing/local-development/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>v1beta1 - Temporal Operator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Temporal Operator" class="md-header__button md-logo" aria-label="Temporal Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Temporal Operator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              v1beta1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/alexandrevilain/temporal-operator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    alexandrevilain/temporal-operator
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Temporal Operator" class="md-nav__button md-logo" aria-label="Temporal Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Temporal Operator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/alexandrevilain/temporal-operator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    alexandrevilain/temporal-operator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/dynamic-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/archival/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archival
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/temporal-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Temporal UI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/admin-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Admin Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mTLS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            mTLS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/mtls/cert-manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Cert-Manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/mtls/istio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Istio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/mtls/linkerd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Linkerd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Monitoring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/monitoring/prometheus-operator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using prometheus-operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/monitoring/prometheus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using prometheus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/overrides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overrides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    v1beta1
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/local-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/publish-release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a new release
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1>API reference</h1>
+<p>Package v1beta1 contains API Schema definitions for the v1beta1 API group</p>
+<p>Resource Types:</p>
+<ul class="simple"><li>
+<a href="#temporal.io/v1beta1.TemporalCluster">TemporalCluster</a>
+</li><li>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcess">TemporalWorkerProcess</a>
+</li></ul>
+<h3 id="temporal.io/v1beta1.TemporalCluster">TemporalCluster
+</h3>
+<p>TemporalCluster defines a temporal cluster deployment.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>apiVersion</code><br>
+string</td>
+<td>
+<code>temporal.io/v1beta1</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>kind</code><br>
+string
+</td>
+<td>
+<code>TemporalCluster</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+Kubernetes meta/v1.ObjectMeta
+</a>
+</em>
+</td>
+<td>
+Refer to the Kubernetes API documentation for the fields of the
+<code>metadata</code> field.
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">
+TemporalClusterSpec
+</a>
+</em>
+</td>
+<td>
+<p>Specification of the desired behavior of the Temporal cluster.</p>
+<br/>
+<br/>
+<table>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Image defines the temporal server docker image the cluster should use for each services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+github.com/alexandrevilain/temporal-operator/pkg/version.Version
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version defines the temporal version the cluster to be deployed.
+This version impacts the underlying persistence schemas versions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>log</code><br>
+<em>
+<a href="#temporal.io/v1beta1.LogSpec">
+LogSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Log defines temporal cluster&rsquo;s logger configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobTtlSecondsAfterFinished</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobTTLSecondsAfterFinished is amount of time to keep job pods after jobs are completed.
+Defaults to 300 seconds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobResources</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcerequirements-v1-core">
+Kubernetes core/v1.ResourceRequirements
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobResources allows set resources for setup/update jobs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>numHistoryShards</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<p>NumHistoryShards is the desired number of history shards.
+This field is immutable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>services</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServicesSpec">
+ServicesSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Services allows customizations for each temporal services deployment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>persistence</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalPersistenceSpec">
+TemporalPersistenceSpec
+</a>
+</em>
+</td>
+<td>
+<p>Persistence defines temporal persistence configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>imagePullSecrets</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#localobjectreference-v1-core">
+[]Kubernetes core/v1.LocalObjectReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>An optional list of references to secrets in the same namespace
+to use for pulling temporal images from registries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ui</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalUISpec">
+TemporalUISpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>UI allows configuration of the optional temporal web ui deployed alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>admintools</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalAdminToolsSpec">
+TemporalAdminToolsSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AdminTools allows configuration of the optional admin tool pod deployed alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>mTLS</code><br>
+<em>
+<a href="#temporal.io/v1beta1.MTLSSpec">
+MTLSSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MTLS allows configuration of the network traffic encryption for the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>metrics</code><br>
+<em>
+<a href="#temporal.io/v1beta1.MetricsSpec">
+MetricsSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Metrics allows configuration of scraping endpoints for stats. prometheus or m3.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicConfig</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DynamicConfigSpec">
+DynamicConfigSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicConfig allows advanced configuration for the temporal cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>archival</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ClusterArchivalSpec">
+ClusterArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Archival allows Workflow Execution Event Histories and Visibility data backups for the temporal cluster.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<code>status</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterStatus">
+TemporalClusterStatus
+</a>
+</em>
+</td>
+<td>
+<p>Most recent observed status of the Temporal cluster.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalWorkerProcess">TemporalWorkerProcess
+</h3>
+<p>TemporalWorkerProcess is the Schema for the temporalworkerprocesses API.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>apiVersion</code><br>
+string</td>
+<td>
+<code>temporal.io/v1beta1</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>kind</code><br>
+string
+</td>
+<td>
+<code>TemporalWorkerProcess</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+Kubernetes meta/v1.ObjectMeta
+</a>
+</em>
+</td>
+<td>
+Refer to the Kubernetes API documentation for the fields of the
+<code>metadata</code> field.
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessSpec">
+TemporalWorkerProcessSpec
+</a>
+</em>
+</td>
+<td>
+<br/>
+<br/>
+<table>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the worker will connect to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version defines the worker process version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Image defines the temporal worker docker image the instance should run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobTtlSecondsAfterFinished</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobTTLSecondsAfterFinished is amount of time to keep job pods after jobs are completed.
+Defaults to 300 seconds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>replicas</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Number of desired replicas. Default to 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>pullPolicy</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#pullpolicy-v1-core">
+Kubernetes core/v1.PullPolicy
+</a>
+</em>
+</td>
+<td>
+<p>Image pull policy for determining how to pull worker process images.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>imagePullSecrets</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#localobjectreference-v1-core">
+[]Kubernetes core/v1.LocalObjectReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>An optional list of references to secrets in the same namespace
+to use for pulling temporal images from registries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>temporalNamespace</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>TemporalNamespace that worker will poll.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>builder</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessBuilder">
+TemporalWorkerProcessBuilder
+</a>
+</em>
+</td>
+<td>
+<p>Builder is the configuration for building a TemporalWorkerProcess.
+THIS FEATURE IS HIGHLY EXPERIMENTAL.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<code>status</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessStatus">
+TemporalWorkerProcessStatus
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ArchivalProvider">ArchivalProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ClusterArchivalSpec">ClusterArchivalSpec</a>)
+</p>
+<p>ArchivalProvider contains the config for archivers.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>filestore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.FilestoreArchiver">
+FilestoreArchiver
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>s3</code><br>
+<em>
+<a href="#temporal.io/v1beta1.S3Archiver">
+S3Archiver
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>gcs</code><br>
+<em>
+<a href="#temporal.io/v1beta1.GCSArchiver">
+GCSArchiver
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ArchivalProviderKind">ArchivalProviderKind
+(<code>string</code> alias)</h3>
+<h3 id="temporal.io/v1beta1.ArchivalSpec">ArchivalSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ClusterArchivalSpec">ClusterArchivalSpec</a>, 
+<a href="#temporal.io/v1beta1.TemporalNamespaceArchivalSpec">TemporalNamespaceArchivalSpec</a>)
+</p>
+<p>ArchivalSpec is the archival configuration for a particular persistence type (history or visibilitty).</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the archival is enabled by default for all namespaces
+or for a particular namespace (depends if it&rsquo;s for a TemporalCluster or a TemporalNamespace).</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>paused</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Paused defines if the archival is paused.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>enableRead</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>EnableRead allows temporal to read from the archived Event History.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>path</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Path is &hellip;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.CassandraConsistencySpec">CassandraConsistencySpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.CassandraSpec">CassandraSpec</a>)
+</p>
+<p>CassandraConsistencySpec sets the consistency level for regular &amp; serial queries to Cassandra.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>consistency</code><br>
+<em>
+<a href="https://pkg.go.dev/github.com/gocql/gocql#Consistency">
+github.com/gocql/gocql.Consistency
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Consistency sets the default consistency level.
+Values identical to gocql Consistency values. (defaults to LOCAL_QUORUM if not set).</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>serialConsistency</code><br>
+<em>
+<a href="https://pkg.go.dev/github.com/gocql/gocql#SerialConsistencyy">
+github.com/gocql/gocql.SerialConsistency
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SerialConsistency sets the consistency for the serial prtion of queries. Values identical to gocql SerialConsistency values.
+(defaults to LOCAL_SERIAL if not set)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.CassandraSpec">CassandraSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">DatastoreSpec</a>)
+</p>
+<p>CassandraSpec contains cassandra datastore connections specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>hosts</code><br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>Hosts is a list of cassandra endpoints.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>port</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<p>Port is the cassandra port used for connection by gocql client.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>user</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>User is the cassandra user used for authentication by gocql client.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>keyspace</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Keyspace is the cassandra keyspace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>datacenter</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Datacenter is the data center filter arg for cassandra.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>maxConns</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MaxConns is the max number of connections to this datastore for a single keyspace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>connectTimeout</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ConnectTimeout is a timeout for initial dial to cassandra server.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>consistency</code><br>
+<em>
+<a href="#temporal.io/v1beta1.CassandraConsistencySpec">
+CassandraConsistencySpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Consistency configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>disableInitialHostLookup</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DisableInitialHostLookup instructs the gocql client to connect only using the supplied hosts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.CertificatesDurationSpec">CertificatesDurationSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.MTLSSpec">MTLSSpec</a>)
+</p>
+<p>CertificatesDurationSpec defines parameters for the temporal mTLS certificates duration.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>rootCACertificate</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>RootCACertificate is the &lsquo;duration&rsquo; (i.e. lifetime) of the Root CA Certificate.
+It defaults to 10 years.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>intermediateCAsCertificates</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>IntermediateCACertificates is the &lsquo;duration&rsquo; (i.e. lifetime) of the intermediate CAs Certificates.
+It defaults to 5 years.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>clientCertificates</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ClientCertificates is the &lsquo;duration&rsquo; (i.e. lifetime) of the client certificates.
+It defaults to 1 year.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>frontendCertificate</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>FrontendCertificate is the &lsquo;duration&rsquo; (i.e. lifetime) of the frontend certificate.
+It defaults to 1 year.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>internodeCertificate</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>InternodeCertificate is the &lsquo;duration&rsquo; (i.e. lifetime) of the internode certificate.
+It defaults to 1 year.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ClusterArchivalSpec">ClusterArchivalSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>ClusterArchivalSpec is the configuration for cluster-wide archival config.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the archival is enabled for the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>provider</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ArchivalProvider">
+ArchivalProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Provider defines the archival provider for the cluster.
+The same provider is used for both history and visibility,
+but some config can be changed using spec.archival.[history|visibility].config.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>history</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ArchivalSpec">
+ArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>History is the default config for the history archival.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>visibility</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ArchivalSpec">
+ArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Visibility is the default config for visibility archival.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ConstrainedValue">ConstrainedValue
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DynamicConfigSpec">DynamicConfigSpec</a>)
+</p>
+<p>ConstrainedValue is an alias for temporal&rsquo;s dynamicconfig.ConstrainedValue.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>constraints</code><br>
+<em>
+<a href="#temporal.io/v1beta1.Constraints">
+Constraints
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Constraints describe under what conditions a ConstrainedValue should be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>value</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1#JSON">
+k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSON
+</a>
+</em>
+</td>
+<td>
+<p>Value is the value for the configuration key.
+The type of the Value field depends on the key.
+Acceptable types will be one of: int, float64, bool, string, map[string]any, time.Duration</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.Constraints">Constraints
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ConstrainedValue">ConstrainedValue</a>)
+</p>
+<p>Constraints is an alias for temporal&rsquo;s dynamicconfig.Constraints.
+It describes under what conditions a ConstrainedValue should be used.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>namespace</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespaceId</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>taskQueueName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>taskQueueType</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>shardId</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>taskType</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ContainerRegistryConfig">ContainerRegistryConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessBuilder">TemporalWorkerProcessBuilder</a>)
+</p>
+<p>ContainerRegistryConfig specifies the parameters to connect with desired container repository.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>repository</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Repository is the fqdn to the image repo.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>username</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Username is the username for the container repo.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>passwordSecretRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SecretKeyReference">
+SecretKeyReference
+</a>
+</em>
+</td>
+<td>
+<p>PasswordSecret is the reference to the secret holding the docker repo password.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DatastoreSpec">DatastoreSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalPersistenceSpec">TemporalPersistenceSpec</a>)
+</p>
+<p>DatastoreSpec contains temporal datastore specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Name is the name of the datastore.
+It should be unique and will be referenced within the persitence spec.
+Defaults to &ldquo;default&rdquo; for default sore, &ldquo;visibility&rdquo; for visibility store,
+&ldquo;secondaryVisibility&rdquo; for secondary visibility store and
+&ldquo;advancedVisibility&rdquo; for advanced visibility store.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>sql</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SQLSpec">
+SQLSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SQL holds all connection parameters for SQL datastores.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>elasticsearch</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ElasticsearchSpec">
+ElasticsearchSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Elasticsearch holds all connection parameters for Elasticsearch datastores.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>cassandra</code><br>
+<em>
+<a href="#temporal.io/v1beta1.CassandraSpec">
+CassandraSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Cassandra holds all connection parameters for Cassandra datastore.
+Note that cassandra is now deprecated for visibility store.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>passwordSecretRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SecretKeyReference">
+SecretKeyReference
+</a>
+</em>
+</td>
+<td>
+<p>PasswordSecret is the reference to the secret holding the password.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tls</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreTLSSpec">
+DatastoreTLSSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>TLS is an optional option to connect to the datastore using TLS.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>skipCreate</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SkipCreate instructs the operator to skip creating the database for SQL datastores or to skip creating keyspace for Cassandra. Use this option if your database or keyspace has already been provisioned by an administrator.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DatastoreStatus">DatastoreStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalPersistenceStatus">TemporalPersistenceStatus</a>)
+</p>
+<p>DatastoreStatus contains the current status of a datastore.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>created</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Created indicates if the database or keyspace has been created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>setup</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Setup indicates if tables have been set up.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>type</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreType">
+DatastoreType
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Type indicates the datastore stype.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>schemaVersion</code><br>
+<em>
+github.com/alexandrevilain/temporal-operator/pkg/version.Version
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SchemaVersion report the current schema version.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DatastoreTLSSpec">DatastoreTLSSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">DatastoreSpec</a>)
+</p>
+<p>DatastoreTLSSpec contains datastore TLS connections specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Enabled defines if the cluster should use a TLS connection to connect to the datastore.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>certFileRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SecretKeyReference">
+SecretKeyReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>CertFileRef is a reference to a secret containing the cert file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>keyFileRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SecretKeyReference">
+SecretKeyReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>KeyFileRef is a reference to a secret containing the key file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>caFileRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.SecretKeyReference">
+SecretKeyReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>CaFileRef is a reference to a secret containing the ca file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>enableHostVerification</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>EnableHostVerification defines if the hostname should be verified when connecting to the datastore.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>serverName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ServerName the datastore should present.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DatastoreType">DatastoreType
+(<code>string</code> alias)</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DatastoreStatus">DatastoreStatus</a>)
+</p>
+<h3 id="temporal.io/v1beta1.DeploymentOverride">DeploymentOverride
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ServiceSpecOverride">ServiceSpecOverride</a>)
+</p>
+<p>DeploymentOverride provides the ability to override a Deployment.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ObjectMetaOverride">
+ObjectMetaOverride
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DeploymentOverrideSpec">
+DeploymentOverrideSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Specification of the desired behavior of the Deployment.</p>
+<br/>
+<br/>
+<table>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DeploymentOverrideSpec">DeploymentOverrideSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DeploymentOverride">DeploymentOverride</a>)
+</p>
+<p>DeploymentOverrideSpec provides the ability to override a Deployment Spec.
+It&rsquo;s a subset of fields included in k8s.io/api/apps/v1.DeploymentSpec.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>template</code><br>
+<em>
+<a href="#temporal.io/v1beta1.PodTemplateSpecOverride">
+PodTemplateSpecOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Template describes the pods that will be created.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.DynamicConfigSpec">DynamicConfigSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>DynamicConfigSpec is the configuration for temporal dynamic config.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>pollInterval</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>PollInterval defines how often the config should be updated by checking provided values.
+Defaults to 10s.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>values</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ConstrainedValue">
+map[string][]./api/v1beta1.ConstrainedValue
+</a>
+</em>
+</td>
+<td>
+<p>Values contains all dynamic config keys and their constained values.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ElasticsearchIndices">ElasticsearchIndices
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ElasticsearchSpec">ElasticsearchSpec</a>)
+</p>
+<p>ElasticsearchIndices holds index names.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>visibility</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Visibility defines visibility&rsquo;s index name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secondaryVisibility</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SecondaryVisibility defines secondary visibility&rsquo;s index name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ElasticsearchSpec">ElasticsearchSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">DatastoreSpec</a>)
+</p>
+<p>ElasticsearchSpec contains Elasticsearch datastore connections specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Version defines the elasticsearch version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>url</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URL is the connection url to connect to the instance.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>username</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Username is the username to be used for the connection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>indices</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ElasticsearchIndices">
+ElasticsearchIndices
+</a>
+</em>
+</td>
+<td>
+<p>Indices holds visibility index names.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>logLevel</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>LogLevel defines the temporal cluster&rsquo;s es client logger level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>closeIdleConnectionsInterval</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>CloseIdleConnectionsInterval is the max duration a connection stay open while idle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>enableSniff</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>EnableSniff enables or disables sniffer on the temporal cluster&rsquo;s es client.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>enableHealthcheck</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>EnableHealthcheck enables or disables healthcheck on the temporal cluster&rsquo;s es client.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.FilestoreArchiver">FilestoreArchiver
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ArchivalProvider">ArchivalProvider</a>)
+</p>
+<p>FilestoreArchiver is the file store archival provider configuration.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>filePermissions</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>FilePermissions sets the file permissions of the archived files.
+It&rsquo;s recommend to leave it empty and use the default value of &ldquo;0666&rdquo; to avoid read/write issues.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dirPermissions</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DirPermissions sets the directory permissions of the archive directory.
+It&rsquo;s recommend to leave it empty and use the default value of &ldquo;0766&rdquo; to avoid read/write issues.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.FrontendMTLSSpec">FrontendMTLSSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.MTLSSpec">MTLSSpec</a>)
+</p>
+<p>FrontendMTLSSpec defines parameters for the temporal encryption in transit with mTLS.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the operator should enable mTLS for cluster&rsquo;s public endpoints.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.GCSArchiver">GCSArchiver
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ArchivalProvider">ArchivalProvider</a>)
+</p>
+<p>GCSArchiver is the GCS archival provider configuration.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>credentialsRef</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#secretkeyselector-v1-core">
+Kubernetes core/v1.SecretKeySelector
+</a>
+</em>
+</td>
+<td>
+<p>SecretAccessKeyRef is the secret key selector containing Google Cloud Storage credentials file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.GitRepositoryRef">GitRepositoryRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.GitRepositorySpec">GitRepositorySpec</a>)
+</p>
+<p>GitRepositoryRef specifies the Git reference to resolve and checkout.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>branch</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Branch to check out, defaults to &lsquo;main&rsquo; if no other field is defined.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.GitRepositorySpec">GitRepositorySpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessBuilder">TemporalWorkerProcessBuilder</a>)
+</p>
+<p>GitRepositorySpec specifies the required configuration to produce an
+Artifact for a Git repository.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>url</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URL specifies the Git repository URL, it can be an HTTP/S or SSH address.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>reference</code><br>
+<em>
+<a href="#temporal.io/v1beta1.GitRepositoryRef">
+GitRepositoryRef
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Reference specifies the Git reference to resolve and monitor for
+changes, defaults to the &lsquo;master&rsquo; branch.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.InternalFrontendServiceSpec">InternalFrontendServiceSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ServicesSpec">ServicesSpec</a>)
+</p>
+<p>InternalFrontendServiceSpec contains temporal internal frontend service specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>ServiceSpec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpec">
+ServiceSpec
+</a>
+</em>
+</td>
+<td>
+<p>
+(Members of <code>ServiceSpec</code> are embedded into this type.)
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if we want to spawn the internal frontend service.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.InternodeMTLSSpec">InternodeMTLSSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.MTLSSpec">MTLSSpec</a>)
+</p>
+<p>InternodeMTLSSpec defines parameters for the temporal encryption in transit with mTLS.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the operator should enable mTLS for network between cluster nodes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.LogSpec">LogSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>LogSpec contains the temporal logging configuration.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>stdout</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Stdout is true if the output needs to goto standard out; default is stderr.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>level</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Level is the desired log level; see colocated zap_logger.go::parseZapLevel()</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>outputFile</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>OutputFile is the path to the log output file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>format</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Format determines the format of each log file printed to the output.
+Use &ldquo;console&rdquo; if you want stack traces to appear on multiple lines.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>development</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Development determines whether the logger is run in Development (== Test) or in
+Production mode.  Default is Production.  Production-stage disables panics from
+DPanic logging.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.MTLSProvider">MTLSProvider
+(<code>string</code> alias)</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.MTLSSpec">MTLSSpec</a>)
+</p>
+<p>MTLSProvider is the enum for support mTLS provider.</p>
+<h3 id="temporal.io/v1beta1.MTLSSpec">MTLSSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>MTLSSpec defines parameters for the temporal encryption in transit with mTLS.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>provider</code><br>
+<em>
+<a href="#temporal.io/v1beta1.MTLSProvider">
+MTLSProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Provider defines the tool used to manage mTLS certificates.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>internode</code><br>
+<em>
+<a href="#temporal.io/v1beta1.InternodeMTLSSpec">
+InternodeMTLSSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Internode allows configuration of the internode traffic encryption.
+Useless if mTLS provider is not cert-manager.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>frontend</code><br>
+<em>
+<a href="#temporal.io/v1beta1.FrontendMTLSSpec">
+FrontendMTLSSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Frontend allows configuration of the frontend&rsquo;s public endpoint traffic encryption.
+Useless if mTLS provider is not cert-manager.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>certificatesDuration</code><br>
+<em>
+<a href="#temporal.io/v1beta1.CertificatesDurationSpec">
+CertificatesDurationSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>CertificatesDuration allows configuration of maximum certificates lifetime.
+Useless if mTLS provider is not cert-manager.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>refreshInterval</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>RefreshInterval defines interval between refreshes of certificates in the cluster components.
+Defaults to 1 hour.
+Useless if mTLS provider is not cert-manager.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>renewBefore</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>RenewBefore is defines how long before the currently issued certificate&rsquo;s expiry
+cert-manager should renew the certificate. The default is <sup>2</sup>&frasl;<sub>3</sub> of the
+issued certificate&rsquo;s duration. Minimum accepted value is 5 minutes.
+Useless if mTLS provider is not cert-manager.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.MetricsSpec">MetricsSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>MetricsSpec determines parameters for configuring metrics endpoints.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Enabled defines if the operator should enable metrics exposition on temporal components.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>prometheus</code><br>
+<em>
+<a href="#temporal.io/v1beta1.PrometheusSpec">
+PrometheusSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Prometheus reporter configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ObjectMetaOverride">ObjectMetaOverride
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DeploymentOverride">DeploymentOverride</a>, 
+<a href="#temporal.io/v1beta1.PodTemplateSpecOverride">PodTemplateSpecOverride</a>, 
+<a href="#temporal.io/v1beta1.TemporalUISpec">TemporalUISpec</a>)
+</p>
+<p>ObjectMetaOverride provides the ability to override an object metadata.
+It&rsquo;s a subset of the fields included in k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>labels</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Map of string keys and values that can be used to organize and categorize
+(scope and select) objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>annotations</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Annotations is an unstructured key value map stored with a resource that may be
+set by external tools to store and retrieve arbitrary metadata.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.PodTemplateSpecOverride">PodTemplateSpecOverride
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DeploymentOverrideSpec">DeploymentOverrideSpec</a>)
+</p>
+<p>PodTemplateSpecOverride provides the ability to override a pod template spec.
+It&rsquo;s a subset of the fields included in k8s.io/api/core/v1.PodTemplateSpec.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ObjectMetaOverride">
+ObjectMetaOverride
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podspec-v1-core">
+Kubernetes core/v1.PodSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Specification of the desired behavior of the pod.</p>
+<br/>
+<br/>
+<table>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.PrometheusScrapeConfig">PrometheusScrapeConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.PrometheusSpec">PrometheusSpec</a>)
+</p>
+<p>PrometheusScrapeConfig is the configuration for making prometheus scrape components metrics.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>annotations</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Annotations defines if the operator should add prometheus scrape annotations to the services pods.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>serviceMonitor</code><br>
+<em>
+<a href="#temporal.io/v1beta1.PrometheusScrapeConfigServiceMonitor">
+PrometheusScrapeConfigServiceMonitor
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.PrometheusScrapeConfigServiceMonitor">PrometheusScrapeConfigServiceMonitor
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.PrometheusScrapeConfig">PrometheusScrapeConfig</a>)
+</p>
+<p>PrometheusScrapeConfigServiceMonitor is the configuration for prometheus operator ServiceMonitor.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the operator should create a ServiceMonitor for each services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>labels</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Labels adds extra labels to the ServiceMonitor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>override</code><br>
+<em>
+<a href="https://prometheus-operator.dev/docs/operator/api/#monitoring.coreos.com/v1.ServiceMonitorSpec">
+github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1.ServiceMonitorSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Override allows customization of the created ServiceMonitor.
+All fields can be overritten except &ldquo;endpoints&rdquo;, &ldquo;selector&rdquo; and &ldquo;namespaceSelector&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>metricRelabelings</code><br>
+<em>
+<a href="https://prometheus-operator.dev/docs/operator/api/#monitoring.coreos.com/v1.RelabelConfig">
+[]github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1.RelabelConfig
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MetricRelabelConfigs to apply to samples before ingestion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.PrometheusSpec">PrometheusSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.MetricsSpec">MetricsSpec</a>)
+</p>
+<p>PrometheusSpec is the configuration for prometheus reporter.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>listenAddress</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Deprecated. Address for prometheus to serve metrics from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>listenPort</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ListenPort for prometheus to serve metrics from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>scrapeConfig</code><br>
+<em>
+<a href="#temporal.io/v1beta1.PrometheusScrapeConfig">
+PrometheusScrapeConfig
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ScrapeConfig is the prometheus scrape configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.S3Archiver">S3Archiver
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ArchivalProvider">ArchivalProvider</a>)
+</p>
+<p>S3Archiver is the S3 archival provider configuration.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>region</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Region is the aws s3 region.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>endpoint</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Use Endpoint if you want to use s3-compatible object storage.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>roleName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Use RoleName if you want the temporal service account
+to assume an AWS Identity and Access Management (IAM) role.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>credentials</code><br>
+<em>
+<a href="#temporal.io/v1beta1.S3Credentials">
+S3Credentials
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Use credentials if you want to use aws credentials from secret.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>s3ForcePathStyle</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Use s3ForcePathStyle if you want to use s3 path style.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.S3Credentials">S3Credentials
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.S3Archiver">S3Archiver</a>)
+</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>accessKeyIdRef</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#secretkeyselector-v1-core">
+Kubernetes core/v1.SecretKeySelector
+</a>
+</em>
+</td>
+<td>
+<p>AccessKeyIDRef is the secret key selector containing AWS access key ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secretKeyRef</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#secretkeyselector-v1-core">
+Kubernetes core/v1.SecretKeySelector
+</a>
+</em>
+</td>
+<td>
+<p>SecretAccessKeyRef is the secret key selector containing AWS secret access key.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.SQLSpec">SQLSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">DatastoreSpec</a>)
+</p>
+<p>SQLSpec contains SQL datastore connections specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>user</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>User is the username to be used for the connection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>pluginName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>PluginName is the name of SQL plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>databaseName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DatabaseName is the name of SQL database to connect to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>connectAddr</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ConnectAddr is the remote addr of the database.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>connectProtocol</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ConnectProtocol is the protocol that goes with the ConnectAddr.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>connectAttributes</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ConnectAttributes is a set of key-value attributes to be sent as part of connect data_source_name url</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>maxConns</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MaxConns the max number of connections to this datastore.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>maxIdleConns</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MaxIdleConns is the max number of idle connections to this datastore.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>maxConnLifetime</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MaxConnLifetime is the maximum time a connection can be alive</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>taskScanPartitions</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>TaskScanPartitions is the number of partitions to sequentially scan during ListTaskQueue operations.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.SecretKeyReference">SecretKeyReference
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ContainerRegistryConfig">ContainerRegistryConfig</a>, 
+<a href="#temporal.io/v1beta1.DatastoreSpec">DatastoreSpec</a>, 
+<a href="#temporal.io/v1beta1.DatastoreTLSSpec">DatastoreTLSSpec</a>)
+</p>
+<p>SecretKeyReference contains enough information to locate the referenced Kubernetes Secret object in the same
+namespace.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name of the Secret.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>key</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Key in the Secret.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ServiceSpec">ServiceSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.InternalFrontendServiceSpec">InternalFrontendServiceSpec</a>, 
+<a href="#temporal.io/v1beta1.ServicesSpec">ServicesSpec</a>)
+</p>
+<p>ServiceSpec contains a temporal service specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>port</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Port defines a custom gRPC port for the service.
+Default values are:
+7233 for Frontend service
+7234 for History service
+7235 for Matching service
+7239 for Worker service</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>membershipPort</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MembershipPort defines a custom membership port for the service.
+Default values are:
+6933 for Frontend service
+6934 for History service
+6935 for Matching service
+6939 for Worker service</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>httpPort</code><br>
+<em>
+int
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>HTTPPort defines a custom http port for the service.
+Default values are:
+7243 for Frontend service</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>replicas</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Number of desired replicas for the service. Default to 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>resources</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcerequirements-v1-core">
+Kubernetes core/v1.ResourceRequirements
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Compute Resources required by this service.
+More info: <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<code>overrides</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpecOverride">
+ServiceSpecOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Overrides adds some overrides to the resources deployed for the service.
+Those overrides takes precedence over spec.services.overrides.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ServiceSpecOverride">ServiceSpecOverride
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.ServiceSpec">ServiceSpec</a>, 
+<a href="#temporal.io/v1beta1.ServicesSpec">ServicesSpec</a>, 
+<a href="#temporal.io/v1beta1.TemporalAdminToolsSpec">TemporalAdminToolsSpec</a>, 
+<a href="#temporal.io/v1beta1.TemporalUISpec">TemporalUISpec</a>)
+</p>
+<p>ServiceSpecOverride provides the ability to override the generated manifests of a temporal service.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>deployment</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DeploymentOverride">
+DeploymentOverride
+</a>
+</em>
+</td>
+<td>
+<p>Override configuration for the temporal service Deployment.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ServiceStatus">ServiceStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterStatus">TemporalClusterStatus</a>)
+</p>
+<p>ServiceStatus reports a service status.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name of the temporal service.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Current observed version of the service.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ready</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Ready defines if the service is ready.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.ServicesSpec">ServicesSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>ServicesSpec contains all temporal services specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>frontend</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpec">
+ServiceSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Frontend service custom specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>internalFrontend</code><br>
+<em>
+<a href="#temporal.io/v1beta1.InternalFrontendServiceSpec">
+InternalFrontendServiceSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Internal Frontend service custom specifications.
+Only compatible with temporal &gt;= 1.20.0</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>history</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpec">
+ServiceSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>History service custom specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>matching</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpec">
+ServiceSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Matching service custom specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>worker</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpec">
+ServiceSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Worker service custom specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>overrides</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpecOverride">
+ServiceSpecOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Overrides adds some overrides to the resources deployed for all temporal services services.
+Those overrides can be customized per service using spec.services.<serviceName>.overrides.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalAdminToolsSpec">TemporalAdminToolsSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>TemporalAdminToolsSpec defines parameters for the temporal admin tools within a Temporal cluster deployment.
+Note that deployed admin tools version is the same as the cluster&rsquo;s version.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the operator should deploy the admin tools alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Image defines the temporal admin tools docker image the instance should run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>resources</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcerequirements-v1-core">
+Kubernetes core/v1.ResourceRequirements
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Compute Resources required by the ui.
+More info: <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<code>overrides</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpecOverride">
+ServiceSpecOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Overrides adds some overrides to the resources deployed for the ui.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterClient">TemporalClusterClient
+</h3>
+<p>A TemporalClusterClient creates a new mTLS client in the targeted temporal cluster.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+Kubernetes meta/v1.ObjectMeta
+</a>
+</em>
+</td>
+<td>
+Refer to the Kubernetes API documentation for the fields of the
+<code>metadata</code> field.
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterClientSpec">
+TemporalClusterClientSpec
+</a>
+</em>
+</td>
+<td>
+<br/>
+<br/>
+<table>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the client will get access to.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<code>status</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterClientStatus">
+TemporalClusterClientStatus
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterClientSpec">TemporalClusterClientSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterClient">TemporalClusterClient</a>)
+</p>
+<p>TemporalClusterClientSpec defines the desired state of ClusterClient.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the client will get access to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterClientStatus">TemporalClusterClientStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterClient">TemporalClusterClient</a>)
+</p>
+<p>TemporalClusterClientStatus defines the observed state of ClusterClient.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>serverName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ServerName is the hostname returned by the certificate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secretRef</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#localobjectreference-v1-core">
+Kubernetes core/v1.LocalObjectReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the Kubernetes Secret containing the certificate for the client.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterReference">TemporalClusterReference
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterClientSpec">TemporalClusterClientSpec</a>, 
+<a href="#temporal.io/v1beta1.TemporalNamespaceSpec">TemporalNamespaceSpec</a>, 
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessSpec">TemporalWorkerProcessSpec</a>)
+</p>
+<p>TemporalClusterReference is a reference to a TemporalCluster.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>The name of the TemporalCluster to reference.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>The namespace of the TemporalCluster to reference.
+Defaults to the namespace of the requested resource if omitted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalCluster">TemporalCluster</a>)
+</p>
+<p>TemporalClusterSpec defines the desired state of Cluster.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Image defines the temporal server docker image the cluster should use for each services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+github.com/alexandrevilain/temporal-operator/pkg/version.Version
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version defines the temporal version the cluster to be deployed.
+This version impacts the underlying persistence schemas versions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>log</code><br>
+<em>
+<a href="#temporal.io/v1beta1.LogSpec">
+LogSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Log defines temporal cluster&rsquo;s logger configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobTtlSecondsAfterFinished</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobTTLSecondsAfterFinished is amount of time to keep job pods after jobs are completed.
+Defaults to 300 seconds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobResources</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcerequirements-v1-core">
+Kubernetes core/v1.ResourceRequirements
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobResources allows set resources for setup/update jobs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>numHistoryShards</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<p>NumHistoryShards is the desired number of history shards.
+This field is immutable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>services</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServicesSpec">
+ServicesSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Services allows customizations for each temporal services deployment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>persistence</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalPersistenceSpec">
+TemporalPersistenceSpec
+</a>
+</em>
+</td>
+<td>
+<p>Persistence defines temporal persistence configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>imagePullSecrets</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#localobjectreference-v1-core">
+[]Kubernetes core/v1.LocalObjectReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>An optional list of references to secrets in the same namespace
+to use for pulling temporal images from registries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ui</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalUISpec">
+TemporalUISpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>UI allows configuration of the optional temporal web ui deployed alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>admintools</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalAdminToolsSpec">
+TemporalAdminToolsSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AdminTools allows configuration of the optional admin tool pod deployed alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>mTLS</code><br>
+<em>
+<a href="#temporal.io/v1beta1.MTLSSpec">
+MTLSSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>MTLS allows configuration of the network traffic encryption for the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>metrics</code><br>
+<em>
+<a href="#temporal.io/v1beta1.MetricsSpec">
+MetricsSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Metrics allows configuration of scraping endpoints for stats. prometheus or m3.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicConfig</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DynamicConfigSpec">
+DynamicConfigSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicConfig allows advanced configuration for the temporal cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>archival</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ClusterArchivalSpec">
+ClusterArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Archival allows Workflow Execution Event Histories and Visibility data backups for the temporal cluster.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalClusterStatus">TemporalClusterStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalCluster">TemporalCluster</a>)
+</p>
+<p>TemporalClusterStatus defines the observed state of Cluster.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Version holds the current temporal version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>services</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceStatus">
+[]ServiceStatus
+</a>
+</em>
+</td>
+<td>
+<p>Services holds all services statuses.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>persistence</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalPersistenceStatus">
+TemporalPersistenceStatus
+</a>
+</em>
+</td>
+<td>
+<p>Persistence holds all datastores statuses.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>conditions</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#condition-v1-meta">
+[]Kubernetes meta/v1.Condition
+</a>
+</em>
+</td>
+<td>
+<p>Conditions represent the latest available observations of the Cluster state.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalNamespace">TemporalNamespace
+</h3>
+<p>A TemporalNamespace creates a namespace in the targeted temporal cluster.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>metadata</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+Kubernetes meta/v1.ObjectMeta
+</a>
+</em>
+</td>
+<td>
+Refer to the Kubernetes API documentation for the fields of the
+<code>metadata</code> field.
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalNamespaceSpec">
+TemporalNamespaceSpec
+</a>
+</em>
+</td>
+<td>
+<br/>
+<br/>
+<table>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the namespace will be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>description</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Namespace description.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ownerEmail</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Namespace owner email.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>retentionPeriod</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<p>RetentionPeriod to apply on closed workflow executions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>data</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Data is a key-value map for any customized purpose.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>securityToken</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>isGlobalNamespace</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>IsGlobalNamespace defines whether the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>clusters</code><br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>List of clusters names to which the namespace can fail over.
+Only applicable if the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>activeClusterName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>The name of active Temporal Cluster.
+Only applicable if the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>allowDeletion</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AllowDeletion makes the controller delete the Temporal namespace if the
+CRD is deleted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>archival</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalNamespaceArchivalSpec">
+TemporalNamespaceArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Archival is a per-namespace archival configuration.
+If not set, the default cluster configuration is used.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<code>status</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalNamespaceStatus">
+TemporalNamespaceStatus
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalNamespaceArchivalSpec">TemporalNamespaceArchivalSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalNamespaceSpec">TemporalNamespaceSpec</a>)
+</p>
+<p>TemporalNamespaceArchivalSpec is a per-namespace archival configuration override.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>history</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ArchivalSpec">
+ArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>History is the config for this namespace history archival.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>visibility</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ArchivalSpec">
+ArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Visibility is the config for this namespace visibility archival.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalNamespaceSpec">TemporalNamespaceSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalNamespace">TemporalNamespace</a>)
+</p>
+<p>TemporalNamespaceSpec defines the desired state of Namespace.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the namespace will be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>description</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Namespace description.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ownerEmail</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Namespace owner email.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>retentionPeriod</code><br>
+<em>
+<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration">
+Kubernetes meta/v1.Duration
+</a>
+</em>
+</td>
+<td>
+<p>RetentionPeriod to apply on closed workflow executions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>data</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Data is a key-value map for any customized purpose.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>securityToken</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>isGlobalNamespace</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>IsGlobalNamespace defines whether the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>clusters</code><br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>List of clusters names to which the namespace can fail over.
+Only applicable if the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>activeClusterName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>The name of active Temporal Cluster.
+Only applicable if the namespace is a global namespace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>allowDeletion</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AllowDeletion makes the controller delete the Temporal namespace if the
+CRD is deleted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>archival</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalNamespaceArchivalSpec">
+TemporalNamespaceArchivalSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Archival is a per-namespace archival configuration.
+If not set, the default cluster configuration is used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalNamespaceStatus">TemporalNamespaceStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalNamespace">TemporalNamespace</a>)
+</p>
+<p>TemporalNamespaceStatus defines the observed state of Namespace.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>conditions</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#condition-v1-meta">
+[]Kubernetes meta/v1.Condition
+</a>
+</em>
+</td>
+<td>
+<p>Conditions represent the latest available observations of the Namespace state.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalPersistenceSpec">TemporalPersistenceSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>TemporalPersistenceSpec contains temporal persistence specifications.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>defaultStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">
+DatastoreSpec
+</a>
+</em>
+</td>
+<td>
+<p>DefaultStore holds the default datastore specs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>visibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">
+DatastoreSpec
+</a>
+</em>
+</td>
+<td>
+<p>VisibilityStore holds the visibility datastore specs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secondaryVisibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">
+DatastoreSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SecondaryVisibilityStore holds the secondary visibility datastore specs.
+Feature only available for clusters &gt;= 1.21.0.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>advancedVisibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreSpec">
+DatastoreSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AdvancedVisibilityStore holds the avanced visibility datastore specs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalPersistenceStatus">TemporalPersistenceStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterStatus">TemporalClusterStatus</a>)
+</p>
+<p>TemporalPersistenceStatus contains temporal persistence status.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>defaultStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreStatus">
+DatastoreStatus
+</a>
+</em>
+</td>
+<td>
+<p>DefaultStore holds the default datastore status.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>visibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreStatus">
+DatastoreStatus
+</a>
+</em>
+</td>
+<td>
+<p>VisibilityStore holds the visibility datastore status.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secondaryVisibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreStatus">
+DatastoreStatus
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>SecondaryVisibilityStore holds the secondary visibility datastore status.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>advancedVisibilityStore</code><br>
+<em>
+<a href="#temporal.io/v1beta1.DatastoreStatus">
+DatastoreStatus
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AdvancedVisibilityStore holds the avanced visibility datastore status.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalUIIngressSpec">TemporalUIIngressSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalUISpec">TemporalUISpec</a>)
+</p>
+<p>TemporalUIIngressSpec contains all configurations options for the UI ingress.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>annotations</code><br>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<p>Annotations allows custom annotations on the ingress ressource.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ingressClassName</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>IngressClassName is the name of the IngressClass the deployed ingress resource should use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>hosts</code><br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>Host is the list of host the ingress should use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tls</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#ingresstls-v1-networking">
+[]Kubernetes networking/v1.IngressTLS
+</a>
+</em>
+</td>
+<td>
+<p>TLS configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalUISpec">TemporalUISpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalClusterSpec">TemporalClusterSpec</a>)
+</p>
+<p>TemporalUISpec defines parameters for the temporal UI within a Temporal cluster deployment.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled defines if the operator should deploy the web ui alongside the cluster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version defines the temporal ui version the instance should run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Image defines the temporal ui docker image the instance should run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>replicas</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Number of desired replicas for the ui. Default to 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>resources</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcerequirements-v1-core">
+Kubernetes core/v1.ResourceRequirements
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Compute Resources required by the ui.
+More info: <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<code>overrides</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ServiceSpecOverride">
+ServiceSpecOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Overrides adds some overrides to the resources deployed for the ui.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ingress</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalUIIngressSpec">
+TemporalUIIngressSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Ingress is an optional ingress configuration for the UI.
+If lived empty, no ingress configuration will be created and the UI will only by available trough ClusterIP service.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>service</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ObjectMetaOverride">
+ObjectMetaOverride
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Service is an optional service resource configuration for the UI.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalWorkerProcessBuilder">TemporalWorkerProcessBuilder
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessSpec">TemporalWorkerProcessSpec</a>)
+</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Enabled defines if the operator should build the temporal worker process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Version is the version of the image that will be used to build worker image.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>attempt</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<p>BuildAttempt is the build attempt number of a given version</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Image is the image that will be used to build worker image.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>buildDir</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>BuildDir is the location of where the sources will be built.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>gitRepository</code><br>
+<em>
+<a href="#temporal.io/v1beta1.GitRepositorySpec">
+GitRepositorySpec
+</a>
+</em>
+</td>
+<td>
+<p>GitRepository specifies how to connect to Git source control.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>buildRegistry</code><br>
+<em>
+<a href="#temporal.io/v1beta1.ContainerRegistryConfig">
+ContainerRegistryConfig
+</a>
+</em>
+</td>
+<td>
+<p>BuildRegistry specifies how to connect to container registry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalWorkerProcessSpec">TemporalWorkerProcessSpec
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcess">TemporalWorkerProcess</a>)
+</p>
+<p>TemporalWorkerProcessSpec defines the desired state of TemporalWorkerProcess.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>clusterRef</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalClusterReference">
+TemporalClusterReference
+</a>
+</em>
+</td>
+<td>
+<p>Reference to the temporal cluster the worker will connect to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version defines the worker process version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>image</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Image defines the temporal worker docker image the instance should run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>jobTtlSecondsAfterFinished</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>JobTTLSecondsAfterFinished is amount of time to keep job pods after jobs are completed.
+Defaults to 300 seconds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>replicas</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Number of desired replicas. Default to 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>pullPolicy</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#pullpolicy-v1-core">
+Kubernetes core/v1.PullPolicy
+</a>
+</em>
+</td>
+<td>
+<p>Image pull policy for determining how to pull worker process images.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>imagePullSecrets</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#localobjectreference-v1-core">
+[]Kubernetes core/v1.LocalObjectReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>An optional list of references to secrets in the same namespace
+to use for pulling temporal images from registries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>temporalNamespace</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>TemporalNamespace that worker will poll.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>builder</code><br>
+<em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcessBuilder">
+TemporalWorkerProcessBuilder
+</a>
+</em>
+</td>
+<td>
+<p>Builder is the configuration for building a TemporalWorkerProcess.
+THIS FEATURE IS HIGHLY EXPERIMENTAL.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="temporal.io/v1beta1.TemporalWorkerProcessStatus">TemporalWorkerProcessStatus
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#temporal.io/v1beta1.TemporalWorkerProcess">TemporalWorkerProcess</a>)
+</p>
+<p>TemporalWorkerProcessStatus defines the observed state of TemporalWorkerProcess.</p>
+<div class="md-typeset__scrollwrap">
+<div class="md-typeset__table">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>created</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Created indicates if the worker process image was created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ready</code><br>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Ready defines if the worker process is ready.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>version</code><br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Version is the version of the image that will be used to build worker image.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>attempt</code><br>
+<em>
+int32
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>BuildAttempt is the build attempt number of a given version</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>conditions</code><br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#condition-v1-meta">
+[]Kubernetes meta/v1.Condition
+</a>
+</em>
+</td>
+<td>
+<p>Conditions represent the latest available observations of the worker process state.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition note">
+<p class="last">This page was automatically generated with <code>gen-crd-api-reference-docs</code></p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.sections"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
